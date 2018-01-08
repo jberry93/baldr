@@ -10,6 +10,8 @@ I wanted to use [Timber](https://www.upstatement.com/timber/) to separate templa
 ### Installation
 - `cd <wordpress root dir>/wp-content/themes/`
 - `git clone https://github.com/jberry93/baldr.git`
+- `cd baldr/`
+- Run `composer install`
 - Go to `http://<localhost_path>/wp-admin/themes.php`
 - Activate `baldr` theme
 - Go to `http://<localhost_path>/wp-admin/plugin-install.php`
