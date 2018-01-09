@@ -1,12 +1,18 @@
 {% extends 'base.twig' %}
 {% block content %}
   <article id="post-{{post.ID}}">
-    <section>
-      <h2 align="center">{{post.title}}</h2>
+    <section class="hero is-dark">
+      <div class="hero-body">
+        <div class="container">
+          <h2 class="title" align="center">{{post.title}}</h2>
+        </div>
+      </div>
+    </section>
+    <section class="section">
       {{post.content}}
     </section>
-    <section>
-      <div>
+    <section class="section">
+      <div class="container">
         {% if post.comments %}
           {% for cmt in post.comments %}
             {% include 'partials/comment.twig' with {comment: cmt} %}

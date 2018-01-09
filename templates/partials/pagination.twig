@@ -1,47 +1,43 @@
 {% if posts.pagination.pages is not empty %}
-  <nav aria-label="Namakemono navigation">
-    <ul class="pagination pagination-sm justify-content-center align-items-center">
-      {% if pagination.prev %}
-        <li class="page-item prev btn">
-          <a class="page-link" href="{{pagination.prev.link}}">
-            Previous
-          </a>
-        </li>
-      {% else %}
-        <li class="page-item prev btn disabled">
-          <a class="page-link">
-            Previous
-          </a>
-        </li>
-      {% endif %}
+  <nav
+    class="pagination is-centered is-small"
+    role="navigation"
+    aria-label="baldr pagination"
+  >
+    {% if pagination.prev %}
+      <a class="pagination-previous" href="{{pagination.prev.link}}">
+        Previous
+      </a>
+    {% else %}
+      <a class="pagination-previous" disabled>
+        Previous
+      </a>
+    {% endif %}
+    {% if pagination.next %}
+      <a class="pagination-next" href="{{pagination.next.link}}">
+        Next
+      </a>
+    {% else %}
+      <a class="pagination-next" disabled>
+        Next
+      </a>
+    {% endif %}
+    <ul class="pagination-list">
       {% for page in pagination.pages %}
         {% if page.link %}
-          <li class="page-item">
-            <a class="page-link {{page.class|join(' ')}}" href="{{page.link}}">
+          <li>
+            <a class="pagination-link" href="{{page.link}}">
               {{page.title}}
             </a>
           </li>
         {% else %}
-          <li class="page-item current">
-            <a class="page-link {{page.class|join(' ')}}">
+          <li>
+            <a class="pagination-link is-current">
               {{page.title}}
             </a>
           </li>
         {% endif %}
       {% endfor %}
-      {% if pagination.next %}
-        <li class="page-item next btn">
-          <a class="page-link" href="{{pagination.next.link}}">
-            Next
-          </a>
-        </li>
-      {% else %}
-        <li class="page-item next btn disabled">
-          <a class="page-link">
-            Next
-          </a>
-        </li>
-      {% endif %}
     </ul>
   </nav>
 {% endif %}
