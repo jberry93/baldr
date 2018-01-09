@@ -1,0 +1,79 @@
+<div>
+  <strong>add comment</strong>
+  <form method="post" action="{{site.site_url~'/wp-comments-post.php'}}">
+    {% if user %}
+      <input
+        type="hidden"
+        name="email"
+        value="{{user.email}}"
+      >
+      <input
+        type="hidden"
+        name="author"
+        value="{{user.name}}"
+      >
+      <input
+        type="hidden"
+        name="url"
+        value="{{user.link}}"
+      >
+    {% else %}
+      <div>
+        <label for="email">Email</label>
+        <input
+          required
+          name="email"
+          type="text"
+          id="email"
+        >
+        <label for="author">Author</label>
+        <input
+          required
+          name="author"
+          type="text"
+          id="author"
+        >
+        <label for="url">URL</label>
+        <input
+          required
+          name="url"
+          type="text"
+          id="url"
+        >
+      </div>
+    {% endif %}
+    <div>
+      <label for="comment">Comment</label>
+      <textarea
+        placeholder="Add a comment"
+        name="comment"
+        cols="60"
+        rows="3"
+        id="comment"
+      ></textarea>
+    </div>
+    <input
+      type="hidden"
+      name="comment_post_ID"
+      value="{{post.id}}"
+      id="comment_post_ID"
+    >
+    <input
+      type="hidden"
+      name="comment_parent"
+      value="{{comment.ID|default('0')}}"
+      id="comment_parent"
+    >
+    <div>
+      <button type="submit" name="Submit">
+        Send
+      </button>
+      <button type="reset">
+        Cancel
+      </button>
+      <strong>
+        Your comment will be revised by the site if needed
+      </strong>
+    </div>
+  </form>
+</div>
