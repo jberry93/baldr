@@ -2,6 +2,7 @@
 <html lang="en">
   {% include 'partials/header.twig' %}
   <body class="{{body_class}}">
+    {% include 'partials/navbar.twig' %}
     {% if function('is_home') %}
       <section class="hero is-dark is-medium" align="center">
         <div class="hero-body">
@@ -26,9 +27,7 @@
           {% endblock %}
         </div>
         <div class="column">
-          <aside>
-            {{function('get_sidebar')}}
-          </aside>
+          {{function('get_sidebar')}}
         </div>
       </div>
     </section>

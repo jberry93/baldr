@@ -1,4 +1,15 @@
 {% extends 'base.twig' %}
 {% block content %}
-  Sorry an error has just occurred :(
+  <section class="hero is-danger">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title">
+          This path does not exist :(
+        </h1>
+        <a class="button is-info" href="{{site.link}}">
+          Go back
+        </a>
+      </div>
+    </div>
+  </section>
 {% endblock %}

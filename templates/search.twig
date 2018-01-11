@@ -1,0 +1,15 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+  {% if posts %}
+    <section class="section">
+      <div class="container">
+        <h1 class="title">{{title}}</h1>
+        {% for post in posts %}
+          {% include 'partials/post-teaser.twig' %}
+        {% endfor %}
+        {% include 'partials/pagination.twig' with {pagination: posts.pagination({show_all: false, mid_size: 1, end_size: 2})} %}
+      </div>
+    </section>
+  {% endif %}
+{% endblock %}

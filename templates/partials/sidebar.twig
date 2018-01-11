@@ -1,0 +1,43 @@
+<nav class="panel">
+  <div class="panel-block">
+    <p class="control">
+      <input
+        class="input is-small"
+        type="text"
+        placeholder="search"
+      >
+    </p>
+  </div>
+  {% for item in menu.items %}
+    {% if item.children %}
+      {#
+      <a class="panel-block dropdown is-hoverable" href="{{item.link}}">
+        <div class="dropdown-trigger">
+          <button
+            class="button"
+            aria-haspopup="true"
+            aria-controls="{{item.title}}-dropdown"
+          >
+            <span>{{item.title}}</span>
+          </button>
+        </div>
+        <div class="dropdown-menu" id="{{item.title}}-dropdown" role="menu">
+          <div class="dropdown-content">
+            {% for child in item.children %}
+              <div class="dropdown-item">
+                <a href="{{child.link}}">
+                  {{child.title}}
+                </a>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </a>
+      #}
+    {% else %}
+      <a class="panel-block" href="{{item.link}}">
+        {{item.title}}
+      </a>
+    {% endif %}
+  {% endfor %}
+</nav>
