@@ -1,12 +1,25 @@
 <nav class="panel">
   <div class="panel-block">
-    <p class="control">
-      <input
-        class="input is-small"
-        type="text"
-        placeholder="search"
-      >
-    </p>
+    <form role="search" method="get">
+      <div class="field has-addons">
+        <div class="control">
+          <label class="label is-hidden" for="search"></label>
+          <input
+            class="input is-small"
+            id="search"
+            name="s"
+            type="text"
+            placeholder="search"
+            value="{{function('get_search_query')}}"
+          >
+        </div>
+        <div class="control">
+          <button type="submit" class="button is-info is-small">
+            Search
+          </button>
+        </div>
+      </div>
+    </form>
   </div>
   {% for item in menu.items %}
     {% if item.children %}
