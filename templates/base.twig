@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include 'partials/header.twig' %}
+  <body class="{{body_class}}">
+    {% include 'partials/navbar.twig' %}
+    {% if function('is_home') %}
+      <section class="hero is-dark is-medium" align="center">
+        <div class="hero-body">
+          <div class="container">
+            <h3 class="title">
+              <a href="{{function('get_bloginfo', 'url')}}">
+                {{function('get_bloginfo', 'name')}}
+              </a>
+            </h3>
+            <p class="subtitle">
+              {{function('get_bloginfo', 'description')}}
+            </p>
+          </div>
+        </div>
+      </section>
+    {% endif %}
+    {% block content %}
+      Nothing to see here!
+    {% endblock %}
+    {% include 'partials/footer.twig' %}
+  </body>
+</html>
