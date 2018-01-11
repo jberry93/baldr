@@ -1,5 +1,19 @@
 @import "~bulma/bulma";
+@import url('https://fonts.googleapis.com/css?family=Rubik');
 
-* {
+*,
+html,
+body {
   -webkit-font-smoothing: antialiased;
+  font-family: 'Rubik', sans-serif;
+
+  .pagination {
+    margin: 1rem;
+  }
+
+  .section {
+    p {
+      line-height: 2rem;
+    }
+  }
 }

@@ -1,10 +1,19 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-  <div class="tile is-vertical is-ancestor">
-    {% for post in posts %}
-      {% include 'partials/post-teaser.twig' %}
-    {% endfor %}
-  </div>
+  <section class="section is-paddingless">
+    <div class="columns is-gapless">
+      <div class="column is-three-quarters">
+        <div class="tile is-vertical is-ancestor">
+          {% for post in posts %}
+            {% include 'partials/post-teaser.twig' %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="column">
+        {{function('get_sidebar')}}
+      </div>
+    </div>
+  </section>
   {% include 'partials/pagination.twig' with {pagination: posts.pagination({show_all: false, mid_size: 1, end_size: 2})} %}
 {% endblock %}

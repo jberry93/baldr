@@ -11,6 +11,7 @@
     <section class="section">
       {{post.content}}
     </section>
+    {#
     <section class="section">
       <div class="container">
         {% if post.comments %}
@@ -27,5 +28,6 @@
         {% include 'partials/comment-form.twig' %}
       {% endif %}
     </section>
+    #}
   </article>
 {% endblock %}

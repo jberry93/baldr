@@ -19,18 +19,9 @@
         </div>
       </section>
     {% endif %}
-    <section class="section">
-      <div class="columns">
-        <div class="column is-three-quarters">
-          {% block content %}
-            Nothing to see here!
-          {% endblock %}
-        </div>
-        <div class="column">
-          {{function('get_sidebar')}}
-        </div>
-      </div>
-    </section>
+    {% block content %}
+      Nothing to see here!
+    {% endblock %}
     {% include 'partials/footer.twig' %}
   </body>
 </html>
