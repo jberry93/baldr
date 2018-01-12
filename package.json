@@ -2,7 +2,7 @@
   "name": "baldr",
   "version": "0.0.1",
   "description": "A Wordpress theme for experimenting with Wordpress theme development",
-  "main": "src/js/app.js",
+  "main": "src/js/baldr.js",
   "repository": "https://github.com/jberry93/baldr.git",
   "author": "Jeffrey Berry <jeffreyberry93@gmail.com>",
   "license": "MIT",

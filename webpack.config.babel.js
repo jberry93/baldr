@@ -1,12 +1,12 @@
 import * as webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
-const extractScss = new ExtractTextPlugin({filename: 'bundle.css'});
+const extractScss = new ExtractTextPlugin({filename: 'baldr.min.css'});
 const config = {
-  entry: './src/js/app.js',
+  entry: './src/js/baldr.js',
   output: {
     path: __dirname + '/dist',
-    filename: 'bundle.js'
+    filename: 'baldr.min.js'
   },
   module: {
     rules: [
